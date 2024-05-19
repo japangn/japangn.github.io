@@ -1,1 +1,402 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Image Carousel</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Set the date we're counting down to
+    const countDownDate = new Date("May 30, 2024 00:00:00").getTime();
+
+    // Update the countdown every 1 second
+    const countdownFunction = setInterval(function() {
+        // Get today's date and time
+        const now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        const distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the respective elements
+        document.querySelector(".days").innerText = days;
+        document.querySelector(".hours").innerText = hours;
+        document.querySelector(".minutes").innerText = minutes;
+        document.querySelector(".seconds").innerText = seconds;
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.querySelector(".countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+});
+
+  </script>
+  <style>
+    /* Basic Reset */
+
+    .countdown-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+}
+
+.time {
+    margin: 0 10px;
+}
+
+.time span {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.labelx {
+    font-size: 14px;
+    color: black;
+}
+
+
+    .footer {
+  background: #061D25;
+  padding: 10px 0;
+}
+.footer a {
+  color: #70726F;
+  font-size: 20px;
+  padding: 10px;
+  border-right: 1px solid #70726F;
+  transition: all .5s ease;
+}
+.footer a:first-child {
+  border-left: 1px solid #70726F;
+}
+.footer a:hover {
+  color: white;
+}
+
+    .socialimg {
+      width: 50px;
+      height: auto;
+    }
+
+    body,
+    h1,
+    h2,
+    p,
+    ul {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navigation Bar Styles */
+    nav {
+      background-color: green;
+      overflow: hidden;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      float: left;
+    }
+
+    nav ul li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    #mainContent {
+      display: flex;
+      /* Activates Flexbox */
+      flex-direction: column;
+    }
+
+    #intro2 {
+      color: black;
+      text-align: center;
+      font-size: 40px;
+    }
+
+    #intro {
+      background-image: url('');
+      background-size: cover;
+      /* Cover the entire div */
+      background-repeat: no-repeat;
+      /* Do not repeat the image */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      height: auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    #about {
+      background-image: url('japa3img.webp');
+      background-size: cover;
+      /* Cover the entire div */
+      background-repeat: no-repeat;
+      /* Do not repeat the image */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      height: 500px;
+      width: 100%;
+
+      display: flex;
+      /* Use Flexbox */
+      flex-direction: column;
+      /* Stack children vertically */
+      justify-content: flex-end;
+      /* Align children to the end (bottom) */
+      align-items: center;
+      /* Center items horizontally */
+
+
+    }
+
+    #social {
+      background-image: url('japaimg2.webp');
+      background-size: cover;
+      /* Cover the entire div */
+      background-repeat: no-repeat;
+      /* Do not repeat the image */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      height: 500px;
+      width: 100%;
+    }
+
+    #intro-header {
+      font-size: 42px;
+      /* Large font size for visibility */
+      font-weight: bold;
+      /* Bold text for emphasis */
+      text-align: center;
+      /* Center-align the text */
+      color: black;
+      /* White text color */
+      -webkit-background-clip: text;
+      font-family: 'Roboto', sans-serif;
+      /* Modern, clean font */
+      margin: 20px 0;
+      /* Add some space around the h2 */
+    }
+
+    .top-page-button {
+      top: 20px;
+      /* Distance from the top of the viewport */
+      right: 20px;
+      /* Distance from the right of the viewport */
+      padding: 10px 20px;
+      /* Padding inside the button */
+      background-color: green;
+      /* Background color */
+      color: white;
+      /* Text color */
+      border: none;
+      /* No border */
+      border-radius: 5px;
+      /* Rounded corners */
+      cursor: pointer;
+      /* Changes the cursor to a pointer on hover */
+      font-size: 32px;
+      /* Text size */
+      font-weight: bold;
+      /* Text weight */
+      z-index: 1000;
+      /* Ensures the button is above other content */
+      transition: background-color 0.3s;
+      /* Smooth transition for hover effect */
+    }
+
+    .top-page-button:hover {
+      background-color: lightgreen;
+      /* Darker shade on hover */
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="mainContent">
+    <div id="intro">
+      <h2 id="intro-header">JAPANGN TOKEN</h2>
+      <table style="text-align: center; width: 100%;">
+        <tr>
+          <td style="text-align: center;">
+            <h3 style="color:black;"> Welcome to the world of JAPANGN Token</h3>
+            <img style="width:80px; padding: 10px" src="mainlogo.png" />
+          </td>
+        </tr>
+      </table>
+      <br />
+      <p style="color:black; font-size: 24px; font-weight: bold; border: 1px solid black;"> Total Supply: 10 Billion JAPANGN</p> <br/>
+      <p style="color:black; padding: 15px; word-wrap: break-word; border: 1px solid black; font-size: 20px;"><b>CA: 5QzuVRhjbQQ6xq8ZszhDQygJtzFtZWcpKHNWAbbx32aH</b></p> <br />
+    </div>
+    <div id="about">
+
+      <table style="width: 100%; ">
+        <tr>
+          <td
+            style="width: 50%; border: solid black 1px; border-spacing: 1px; background-color: rgba(211, 211, 211, 0.5);">
+
+            <a style="color: #ffffff; font-weight: bold; font-size: 28px;" class="twitter-follow-button"
+              href="https://twitter.com/JapaNGN" data-size="large"> <img src="twitterlogo.png" /> <br />Follow
+              @JapaNGN</a>
+
+          </td>
+          <td
+            style="width: 50%; border: solid black 1px; border-spacing: 1px; background-color: rgba(211, 211, 211, 0.5);">
+            <a style="color: #ffffff; font-weight: bold; font-size: 28px;" href="https://t.me/japangncoin"
+              target="_blank">
+              <img src="Telegramlogo.png" /> <br />
+              <p>Join us on Telegram</p>
+            </a>
+
+          </td>
+        </tr>
+      </table>
+
+
+    </div>
+    <button class="top-page-button" style="float: right;">Buy JAPANGN Now</button>
+
+    <div id="intro2">
+
+      <p>
+        <span> <b style="color: red;">Re</b>volution is Now </span> <br/>
+        <p style="color:black; font-size: 24px; font-weight: bold; border: 1px solid black;"> LP BURNED</p> 
+        <p style="color:black; font-size: 24px; font-weight: bold; border: 1px solid black;"> Ticker: JAPANGN</p> 
+        <p style="color:black; padding: 15px; word-wrap: break-word; border: 1px solid black;"><b>Tax: 0</b></p> <br />
+
+        Introducing JAPANGN the latest sensation in the world of meme coins on the SOLANA blockchain! <br /> <br />
+
+        While the future of the Naira Jaga Jaga...The supply of JAPANGN is locked at 10 Billion tokens. No matter how bad the Yeye politicians destroy the Naira and print them into existence.  The future value of JAPANGN token is controlled by the people. <br/>
+
+        Those that have decided to mortgage our destinies must understand that we are in charge. <br/>
+        
+        Since we can't Japa Nigeria. Let's Japa NGN.<br /><br />
+
+       
+
+
+    </div>
+    <div class="countdown-container">
+      <h2> Countdown to Launch</h2>
+
+      <div class="countdown">
+          <div class="time">
+              <span class="days"></span>
+              <div class="labelx">Days</div>
+          </div>
+          <div class="time">
+              <span class="hours"></span>
+              <div class="labelx">Hours</div>
+          </div>
+          <div class="time">
+              <span class="minutes"></span>
+              <div class="labelx">Minutes</div>
+          </div>
+          <div class="time">
+              <span class="seconds"></span>
+              <div class="labelx">Seconds</div>
+          </div>
+      </div>
+  </div>
+  
+
+
+    <div id="social">
+
+      <ul class="list-group">
+        <li class="list-group-item" style="color: black;">How to BUY JAPANGN</li>
+        <li class="list-group-item list-group-item-primary">1. Have or create a Phantom wallet <button style="background-color: #ab9ff2; font-size: 18px;
+          font-weight: bold;"> <a href="https://phantom.app">Get Phantom Wallet</a></button></li>
+        <li class="list-group-item list-group-item-primary">2. Buy SOLANA and send it your wallet</li>
+        <li class="list-group-item list-group-item-primary">3. Connect it to Raydium or Jupiter</li>
+     
+        
+      </ul>
+
+
+
+
+
+    </div>
+
+
+  </div>
+
+  <!-- Navigation Bar -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+  <footer class="footer">
+    <div class="container text-center">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+    </div>
+   
+  </footer>
+  <br/>
+  <p style="padding: 15px">DISCLOSURE: By purchasing JAPANGN coin, you agree that you are not purchasing a security  or investment contract and you agree to hold the team harmless and not liable for any loses or taxes you may incur. Although JAPANGN is a community driven Defi Ecosystem and not a registered digital currency, alwaus make sure that you are in compliance with local laws and regulations before you make any purchase.</p> <br/>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
