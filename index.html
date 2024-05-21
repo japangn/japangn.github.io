@@ -40,7 +40,10 @@
         }
     }, 1000);
 });
-
+  function scrolltocount(){
+    var scroll_item = document.getElementsByClassName('countdown-container')[0];
+    scroll_item.scrollIntoView();
+  }
   </script>
   <style>
     /* Basic Reset */
@@ -312,7 +315,7 @@
 
 
     </div>
-    <button class="top-page-button" style="float: right;">Buy JAPANGN Now</button>
+    <button class="top-page-button" style="float: right;" onclick="scrolltocount()">Buy JAPANGN Now</button>
 
     <div id="intro2">
 
